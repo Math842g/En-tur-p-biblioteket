@@ -69,13 +69,17 @@ namespace En_tur_på_biblioteket
 
             while (true)
             {
+                //clears text in console
                 Console.Clear();
+                //checks if there is any books left to scan
                 if (UserLoan.Count == 0)
                 {
                     Console.WriteLine("All books have been scanned");
                     break;
                 }
+                //prints the next book in the stack
                 Console.WriteLine(UserLoan.Peek().Title + " Has been scanned\n Press any key to scan next");
+                //deletes the next book in the stack
                 UserLoan.Pop();
                 Console.ReadKey();
             }
