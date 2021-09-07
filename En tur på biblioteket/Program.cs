@@ -12,7 +12,7 @@ namespace En_tur_på_biblioteket
         {
             //creating a list and stack
             List<Book> books = new List<Book>();
-            Stack<Book> UserLoan = new Stack<Book>();
+            Stack<Book> userloan = new Stack<Book>();
             //creating books
             Book book1 = new Book { Title = "book", Author = "A cool person", Pages = 100 };
             Book book2 = new Book { Title = "book1", Author = "A cool person", Pages = 110 };
@@ -45,7 +45,7 @@ namespace En_tur_på_biblioteket
                 Console.Write("Enter the number of the book you want to loan: ");
                 int loanNumber = int.Parse(Console.ReadLine());
                 //adding the the book chosen to the users stack
-                UserLoan.Push(books[loanNumber]);
+                userloan.Push(books[loanNumber]);
                 //removing the chosen book from the list
                 books.RemoveAt(loanNumber);
                 //checking if the user want more books
@@ -62,7 +62,7 @@ namespace En_tur_på_biblioteket
                     Console.WriteLine("No more books left");
                     break;
                 }
-                Console.WriteLine(UserLoan.Peek());
+                Console.WriteLine(userloan.Peek());
                 //clears text in console
                 Console.Clear();
             }
@@ -72,15 +72,15 @@ namespace En_tur_på_biblioteket
                 //clears text in console
                 Console.Clear();
                 //checks if there is any books left to scan
-                if (UserLoan.Count == 0)
+                if (userloan.Count == 0)
                 {
                     Console.WriteLine("All books have been scanned");
                     break;
                 }
                 //prints the next book in the stack
-                Console.WriteLine(UserLoan.Peek().Title + " Has been scanned\n Press any key to scan next");
+                Console.WriteLine(userloan.Peek().Title + " Has been scanned\n Press any key to scan next");
                 //deletes the next book in the stack
-                UserLoan.Pop();
+                userloan.Pop();
                 Console.ReadKey();
             }
             Console.ReadKey();
